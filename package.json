@@ -1,0 +1,35 @@
+{
+  "name": "lightbot-widget-example",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@progress/kendo-react-buttons": "^2.6.1",
+    "@progress/kendo-react-conversational-ui": "^2.6.1",
+    "@progress/kendo-react-intl": "^2.6.1",
+    "@progress/kendo-theme-default": "^3.2.0",
+    "@types/jest": "^23.3.13",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.20",
+    "@types/react-dom": "^16.0.11",
+    "lightbot": "https://github.com/lightbasenl/lightbot.js.git",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.1.3",
+    "typescript": "^3.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

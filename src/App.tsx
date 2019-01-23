@@ -19,7 +19,7 @@ class AppDisconnected extends Component<
     user: User;
   }
 > {
-  constructor(props: AppProps) {
+  constructor(props: AppProps & Messenger) {
     super(props);
     const bot = {
       id: 0

@@ -18,16 +18,17 @@ export interface Messenger {
 export function withMessenger<C extends Messenger>(
   messengerProps: LightbotMessengerProps
 ) {
-  type OptionalMessenger = { [K in keyof Messenger]+?: Messenger[K] };
-  type WrappedComponentProps = C & OptionalMessenger;
+  type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
+  type Subtract<T, K> = Omit<T, keyof K>;
+  type WrapperProps = Subtract<C, Messenger>;
 
   return (
-    Component: React.ComponentClass<C> | React.FunctionComponent<C>
-  ): React.ComponentClass<WrappedComponentProps> =>
-    class LightbotDecorator extends React.Component<WrappedComponentProps> {
+    Component: React.ComponentClass<C>
+  ): React.ComponentClass<WrapperProps> =>
+    class LightbotDecorator extends React.Component<WrapperProps> {
       private messenger: LightbotMessenger;
 
-      constructor(props: WrappedComponentProps) {
+      constructor(props: WrapperProps) {
         super(props);
 
         this.messenger = new LightbotMessenger({
@@ -39,7 +40,7 @@ export function withMessenger<C extends Messenger>(
       public render() {
         return (
           <Component
-            {...this.props}
+            {...this.props as C}
             isMessengerOpen={this.messenger.isOpen}
             messages={this.messenger.messages}
             sendMessage={this.messenger.sendMessage}

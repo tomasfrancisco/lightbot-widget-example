@@ -7,10 +7,14 @@ import {
   Message,
   User
 } from "@progress/kendo-react-conversational-ui";
+import {
+  LightbotMessage,
+  LightbotMessengerDecoratedProps,
+  withLightbotMessenger
+} from "lightbot/lib/lightbot-react";
 import React, { Component } from "react";
-import { withMessenger, Messenger, LightbotMessage } from "./LightbotDecorator";
 
-interface AppProps extends Messenger {}
+interface AppProps extends LightbotMessengerDecoratedProps {}
 
 class AppDisconnected extends Component<
   AppProps,
@@ -19,7 +23,7 @@ class AppDisconnected extends Component<
     user: User;
   }
 > {
-  constructor(props: AppProps & Messenger) {
+  constructor(props: AppProps) {
     super(props);
     const bot = {
       id: 0
@@ -81,7 +85,7 @@ class AppDisconnected extends Component<
   };
 }
 
-export const App = withMessenger<AppProps>({
+export const App = withLightbotMessenger<AppProps>({
   hostURL: "https://api.lightbot.io/v1/passthrough",
   agentId: "7a1eedf8-3afa-4281-b254-9f9d9bc97f6a"
 })(AppDisconnected);

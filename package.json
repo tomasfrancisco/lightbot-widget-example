@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://tomasfrancisco.github.io/lightbot-widget-example",
   "dependencies": {
+    "@lightbase/lightbot": "^1.0.0",
     "@progress/kendo-react-buttons": "^2.6.1",
     "@progress/kendo-react-conversational-ui": "^2.6.1",
     "@progress/kendo-react-intl": "^2.6.1",

@@ -11,7 +11,7 @@ import {
   LightbotMessage,
   LightbotMessengerDecoratedProps,
   withLightbotMessenger
-} from "lightbot/lib/lightbot-react";
+} from "@lightbase/lightbot/lib/lightbot-react";
 import React, { Component } from "react";
 
 interface AppProps extends LightbotMessengerDecoratedProps {}

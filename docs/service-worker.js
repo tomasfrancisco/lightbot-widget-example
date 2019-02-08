@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/lightbot-widget-example/precache-manifest.d07c7c442bf355db95642cca892916db.js"
+  "/lightbot-widget-example/precache-manifest.98fc668eecf04290f082aaa62e059837.js"
 );
 
 workbox.clientsClaim();
